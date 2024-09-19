@@ -29,6 +29,20 @@ pnpm install
 
 `vscode`插件搜索`LiveServer`点击安装
 
+### 编译游戏
+
+基于`TS`开发,需要使用` TS CIL`
+
+```
+tsc
+```
+
+如果希望修改了`TS`代码后能马上触发编译,请使用
+
+```
+tsc -watch
+```
+
 ### 启动服务
 
 进入`index.html,`右键选择`Open with live server`
