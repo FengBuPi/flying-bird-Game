@@ -1,0 +1,8 @@
+# 忽略 node_modules 目录
+node_modules/
+
+# 忽略 TypeScript 编译产物
+dist/
+
+# 忽略 VSCode 设置文件
+.vscode/
