@@ -46,3 +46,21 @@ tsc -watch
 ### 启动服务
 
 进入`index.html,`右键选择`Open with live server`
+
+## 代码PR
+github仓库:https://github.com/FengBuPi/flying-bird-Game
+gitee仓库:https://gitee.com/FengBuPi/flying-bird-Game
+
+**贡献者**提交方式:
+1. fork
+2. clone
+3. 修改代码
+4. commit
+5. push
+6. pull request
+
+**开发者**提交方式:
+```
+git push origin master
+git push github master:main
+```
