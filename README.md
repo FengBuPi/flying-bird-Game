@@ -2,13 +2,14 @@
 
 ## 项目概述
 
-本项目是一个基于面向对象编程（OOP）思想、TypeScript 语言、单页面应用（SPA）架构和手写迷你路由器（Mini Router）的单页面小游戏——“飞翔的小鸟”。游戏采用了 Hash 模式来实现页面间的路由跳转，使得整个应用能够在不刷新页面的情况下切换不同的游戏状态。
+本项目是一个基于面向对象编程（OOP）思想、TypeScript 语言、单页面应用（SPA）技术、WebComponent 的 Shadow DOM（影子 DOM） 技术以及自定义迷你路由器（Mini Router）实现的单页面小游戏——“飞翔的小鸟”。
 
 ## 技术栈
 
 - **TypeScript**: 静态类型检查的编程语言，提高了代码质量和可维护性。
 - **面向对象编程（OOP）**: 通过类和对象来组织代码，实现了模块化和可复用性。
-- **单页面应用（SPA）**: 利用前端路由技术，实现在同一个页面中动态加载不同内容。
+- **单页面应用（SPA）**: 利用前端路由技术，在同一个页面中动态加载不同内容。
+- **Shadow DOM（影子 DOM）**: 提供了组件化的封装机制，增强了应用的隔离性和可维护性。
 - **迷你路由器（Mini Router）**: 自定义的路由管理器，基于 URL 的哈希部分实现页面跳转。
 
 ## 主要功能
@@ -47,7 +48,7 @@ tsc -watch
 
 进入`index.html,`右键选择`Open with live server`
 
-## 代码PR
+## 代码地址
 github仓库:https://github.com/FengBuPi/flying-bird-Game
 gitee仓库:https://gitee.com/FengBuPi/flying-bird-Game
 
