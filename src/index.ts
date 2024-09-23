@@ -3,23 +3,22 @@ import Router, { RouterOption } from "./Router/Router.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   const parser = new DOMParser(); // 解析html字符串为dom对象
+  const gethomePage = fetch('./Components/home-game-page.html').then(response => response.text());
+  const getgamePage = fetch('./Components/start-game-page.html').then(response => response.text());
+  const [homePageRes, getgamePageRes] = await Promise.all([gethomePage, getgamePage])
+  const homePage = parser.parseFromString(homePageRes, 'text/html');
+  const gamePage = parser.parseFromString(getgamePageRes, 'text/html');
 
-  // 自处一定会阻塞主线程,是否可以并发优化?
-  const homePage = parser.parseFromString(await fetch('./Components/home-game-page.html').then(response => response.text()), 'text/html');
-  const gamePage = parser.parseFromString(await fetch('./Components/start-game-page.html').then(response => response.text()), 'text/html');
-  const background = parser.parseFromString(await fetch('./Components/background.html').then(response => response.text()), 'text/html');
   const routerOptins: RouterOption[] = [
     {
       name: '游戏首页',
       url: '/home',
       template: homePage.getElementById('home-game-page') as HTMLTemplateElement, // 页面组件
-      otherTemplates: [background.getElementById('background')] as HTMLTemplateElement[]// 子组件
     },
     {
       name: '游戏中',
       url: '/start',
       template: gamePage.getElementById('start-game-page') as HTMLTemplateElement,
-      otherTemplates: [background.getElementById('background')] as HTMLTemplateElement[]
     }
   ]
 
