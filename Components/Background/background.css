@@ -1,0 +1,30 @@
+/* 背景 */
+#background-box {
+  width: var(--view-width);
+  height: var(--view-height);
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+
+  &>#background {
+    display: flex;
+    animation: moveBackground var(--animation-background-time) linear infinite;
+    will-change: transform;
+    backface-visibility: hidden;
+
+    &>img {
+      width: var(--view-width);
+      height: var(--view-height);
+    }
+  }
+}
+
+@keyframes moveBackground {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
