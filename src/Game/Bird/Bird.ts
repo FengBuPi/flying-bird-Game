@@ -8,11 +8,11 @@ export interface BirdOptions {
 
 export default class Bird {
   bird: HTMLElement;
-  y: number; // 纵向位置
-  angle: number; // 当前角度
-  speed: number; // 当前速度 
-  gravity: number; // 重力
-  jumpUp: number; // 跳跃速度
+  y!: number; // 纵向位置
+  angle!: number; // 当前角度
+  speed!: number; // 当前速度 
+  gravity!: number; // 重力
+  jumpUp!: number; // 跳跃速度
   birdOptions: BirdOptions = {
     y: 0,
     angle: 0,
@@ -23,19 +23,7 @@ export default class Bird {
   constructor(bird: HTMLElement, birdOptions: BirdOptions) {
     this.bird = bird;
     this.birdOptions = birdOptions || this.birdOptions;
-    const {
-      y,
-      angle,
-      gravity,
-      speed,
-      jumpUp
-    } = this.birdOptions;
-    this.y = y;
-    this.angle = angle;
-    this.gravity = gravity;
-    this.speed = speed;
-    this.jumpUp = jumpUp;
-    this.bird.style.transform = `translate(0,${this.y}px) rotate(${this.angle}deg)`;
+    this.init()
   }
 
   init() {
@@ -51,6 +39,7 @@ export default class Bird {
     this.gravity = gravity;
     this.speed = speed;
     this.jumpUp = jumpUp;
+    this.bird.style.transform = `translate(0,${this.y}px) rotate(${this.angle}deg)`;
   }
 
   jump() {
